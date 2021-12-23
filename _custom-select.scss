@@ -1,0 +1,46 @@
+.custom-select{
+  position: relative;
+  select{
+    display: none;
+  }
+  &__label{
+    width: 100%;
+    cursor: pointer;
+  }
+  &__dropdown{
+    position: absolute;
+    top:100%;
+    left:0;
+    width: 100%;
+    z-index: 98;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transform-origin: center;
+    transform: scale(0.75) translateY(-19px);
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li{
+        padding: 18px 15px;
+        cursor: pointer;
+        transition: all 250ms;
+       
+        &:hover{
+        }
+        &.is-selected{
+        }
+      }
+    }
+  }
+  &.is-open &{
+    &__dropdown{
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: all;
+    }
+  }
+}
