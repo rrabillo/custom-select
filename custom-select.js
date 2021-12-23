@@ -39,7 +39,7 @@ export default class CustomSelect {
             el.addEventListener('click', this.onClickOption.bind(this));
         });
         this.elItems = this.elDropdown.querySelectorAll('li');
-        this.updateLabel(this.elSelect.value);
+        this.updateLabel(this.elSelect.querySelector('option:checked').innerText);
     }
 
     onClickOption(e){
